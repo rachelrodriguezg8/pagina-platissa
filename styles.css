@@ -1,0 +1,71 @@
+.gallery-container {
+    margin-top: 200px; /* Ajusta este valor según sea necesario */
+}
+
+.gallery-container h1 {
+    text-align: left;
+    margin-top: 50px; /* Aumentado el margen superior */
+    margin-left: 9%; /* Ajusta este valor según sea necesario */
+    margin-bottom: 10px; /* Ajusta este valor para reducir el espacio inferior */
+    font-size: 40px;
+    font-family: monospace;
+}
+
+.gallery {
+    height: 400px;
+    width: 100%; /* Cambiado a 100% para que ocupe todo el ancho */
+    display: flex;
+    margin: 0 auto; /* Ajustado para quitar margen superior */
+    box-sizing: border-box;
+}
+
+.image-box {
+    margin: 0 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: .5s;
+    width: calc(100% / 5); /* Ajustado para que las imágenes se distribuyan equitativamente */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.image-box:hover {
+    flex-basis: 50%;
+}
+
+.active {
+    flex-basis: 50%;
+}
+
+.gallery:hover .active {
+    flex-basis: 0;
+}
+
+.image-box:nth-child(1):hover {
+    flex-basis: 50%;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .gallery {
+        height: auto;
+        flex-direction: column;
+    }
+    .image-box {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+h1 {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10%;
+    font-size: 40px;
+    font-family: 'DejaVu Sans Mono', monospace;
+}
